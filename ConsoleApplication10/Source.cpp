@@ -95,24 +95,28 @@ start:
 		if ((mes == 1) || (mes == 2) || (mes == 12))
 		{
 			
-			k = 88;
+			k = 3;
 			SetConsoleTextAttribute(hConsole, k);
 			cout << mes << " это зимний мес€ц \n";
-			return 0;
 			goto start;
 		}
 		else if ((mes == 3) || (mes == 4) || (mes == 5))
 		{
+			
 			cout << mes << " это весений мес€ц \n";
 			goto start;
 		}
 		else if ((mes == 6) || (mes == 7) || (mes == 8))
 		{
+			k = 2;
+			SetConsoleTextAttribute(hConsole, k);
 			cout << mes << " это летний мес€ц \n";
 			goto start;
 		}
 		else if ((mes == 9) || (mes == 10) || (mes == 11))
 		{
+			k = 6;
+			SetConsoleTextAttribute(hConsole, k);
 			cout << mes << " это осений мес€ц \n";
 			goto start;
 		}
