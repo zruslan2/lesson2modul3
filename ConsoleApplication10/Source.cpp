@@ -2,6 +2,7 @@
 #include <iostream>
 #include <locale.h>
 #include <math.h>
+#include <windows.h>
 
 using namespace std;
 unsigned short int nz;
@@ -83,12 +84,21 @@ start:
 		/*3.	Ввести с экрана число от 1 до 12. По номеру месяца выдать сообщение о времени года.
 		Если пользователь введет недопустимое число, программа должна выдать сообщение об ошибке*/
 		unsigned short int mes;
+		int k;
+		HANDLE hConsole;
+		hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+
+
 		MES:
 		cout << "Введите номер месяца \n";
 		cin >> mes;
 		if ((mes == 1) || (mes == 2) || (mes == 12))
 		{
+			
+			k = 88;
+			SetConsoleTextAttribute(hConsole, k);
 			cout << mes << " это зимний месяц \n";
+			return 0;
 			goto start;
 		}
 		else if ((mes == 3) || (mes == 4) || (mes == 5))
@@ -170,6 +180,25 @@ start:
 		{
 			cout << "Введите правильно время \n";
 			goto CH;
+		}
+
+	}
+	break;
+	// Высокий уровень
+	case 6:
+	{
+		/*1.	Дано двухзначное число.Определить:
+		a.входит ли в него цифра 5;
+		b.входит ли в него цифра а.*/
+		cout << "Высокий уровень 1. \n";
+		int a,a1,a2;
+		cout << "Введите двухзначное число \n";
+		cin >> a;
+		a1 = a / 10;
+		a2 = a % 10;
+		if (a1 == 5 || a2 == 5)
+		{
+			cout << "";
 		}
 
 	}
